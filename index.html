@@ -23,7 +23,7 @@
       background: #fefef7;
       overflow-x: hidden;
     }
-    /* Premium SutonnyMJ Bengali Font - elegant, clear, professional */
+    /* Premium SutonnyMJ Bengali Font */
     .bn, .bengali, [lang="bn"], .bn-subtle, .bn-small, .bn-card-desc, .testimonial-bn {
       font-family: 'SutonnyMJ', 'Noto Sans Bengali', sans-serif;
       font-weight: 400;
@@ -122,16 +122,6 @@
       transition: 0.2s;
     }
     .whatsapp-float:hover { transform: scale(1.05); background: #20b359; }
-    @media (max-width: 640px) {
-      .whatsapp-float { padding: 10px 16px; bottom: 18px; right: 18px; }
-      .whatsapp-float span { font-size: 0.75rem; }
-    }
-    @media (max-width: 768px) {
-      .contact-info-item {
-        flex-wrap: wrap;
-        word-break: break-word;
-      }
-    }
     /* Lebanon Flag Badge Style */
     .lebanon-flag-badge {
       display: inline-flex;
@@ -150,6 +140,52 @@
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .lebanon-flag-badge {
+        padding: 8px 16px;
+        gap: 8px;
+      }
+      .flag-icon-large {
+        width: 36px;
+        height: 36px;
+      }
+      .glass-card {
+        border-radius: 1.25rem;
+      }
+      .hero-bg {
+        background-position: center 20%;
+      }
+      .license-bar {
+        font-size: 0.65rem;
+        padding: 6px 12px;
+      }
+    }
+    @media (max-width: 640px) {
+      .whatsapp-float {
+        padding: 10px 16px;
+        bottom: 18px;
+        right: 18px;
+      }
+      .whatsapp-float span {
+        font-size: 0.75rem;
+      }
+      .lebanon-flag-badge {
+        padding: 6px 12px;
+      }
+      .flag-icon-large {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    /* For extra small devices */
+    @media (max-width: 480px) {
+      .license-bar {
+        font-size: 0.55rem;
+        white-space: normal;
+        line-height: 1.3;
+      }
+    }
   </style>
 </head>
 <body>
@@ -159,22 +195,22 @@
     <i class="fas fa-certificate gold-text mr-1"></i> Govt. Approved Recruiting License: RL-0173 | BUSINESS ALLIANCE LTD. (Bangladesh) | <span class="gold-text">Authorized by MD YASIN</span>
   </div>
 
-  <!-- Sticky Glass Navigation -->
+  <!-- Sticky Glass Navigation - Fully Responsive -->
   <header class="sticky top-0 z-50 glass-nav relative-section">
-    <div class="container mx-auto px-6 lg:px-10 py-3 flex flex-wrap justify-between items-center">
-      <div class="flex items-center gap-3">
-        <i class="fas fa-globe-asia text-3xl gold-text"></i>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-10 py-3 flex flex-wrap justify-between items-center">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <i class="fas fa-globe-asia text-2xl sm:text-3xl gold-text"></i>
         <div>
-          <span class="font-black text-2xl tracking-tight text-white">Yasin<span class="gold-text">Consult</span>.com</span>
+          <span class="font-black text-xl sm:text-2xl tracking-tight text-white">Yasin<span class="gold-text">Consult</span>.com</span>
           <div class="text-xs text-gray-300 bn">বিজনেস অ্যালায়েন্স লিমিটেড</div>
         </div>
       </div>
-      <div class="hidden md:flex items-center space-x-7 text-white font-medium">
-        <a href="#home" class="hover:text-[#d4af37] transition">Home</a>
-        <a href="#services" class="hover:text-[#d4af37] transition">Services</a>
-        <a href="#global" class="hover:text-[#d4af37] transition">Offices</a>
-        <a href="#contact" class="hover:text-[#d4af37] transition">Contact</a>
-        <a href="#consultation" class="bg-[#d4af37] text-black font-bold px-5 py-2 rounded-full shadow-md hover:bg-white transition">Free Consult</a>
+      <div class="hidden md:flex items-center space-x-4 lg:space-x-7 text-white font-medium">
+        <a href="#home" class="hover:text-[#d4af37] transition text-sm lg:text-base">Home</a>
+        <a href="#services" class="hover:text-[#d4af37] transition text-sm lg:text-base">Services</a>
+        <a href="#global" class="hover:text-[#d4af37] transition text-sm lg:text-base">Offices</a>
+        <a href="#contact" class="hover:text-[#d4af37] transition text-sm lg:text-base">Contact</a>
+        <a href="#consultation" class="bg-[#d4af37] text-black font-bold px-4 py-2 rounded-full shadow-md hover:bg-white transition text-sm">Free Consult</a>
       </div>
       <button id="mobileBtn" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
@@ -190,165 +226,164 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section id="home" class="relative overflow-hidden hero-bg min-h-[85vh] flex items-center">
+    <!-- Hero Section - Responsive -->
+    <section id="home" class="relative overflow-hidden hero-bg min-h-[70vh] sm:min-h-[80vh] flex items-center">
       <div class="hero-overlay absolute inset-0"></div>
-      <div class="container mx-auto px-6 lg:px-12 relative z-10 text-white py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 text-white py-12 sm:py-16 md:py-20">
         <div class="max-w-3xl reveal">
-          <div class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-1 rounded-full text-sm font-semibold mb-5 gold-text border border-gold-500/40">
+          <div class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-5 gold-text border border-gold-500/40">
             <i class="fas fa-user-tie"></i> Lead Consultant: MD YASIN
           </div>
-          <h1 class="font-extrabold text-5xl md:text-7xl leading-tight">Trusted Visa & Manpower Solutions <br>by <span class="gold-text">MD YASIN</span></h1>
-          <p class="text-xl md:text-2xl mt-3 bn font-medium text-amber-100/90">এমডি ইয়াসিন-এর বিশ্বস্ত ভিসা ও ম্যানপাওয়ার সমাধান</p>
-          <p class="text-lg mt-5 max-w-2xl text-white/90">Government approved recruitment agency (RL-0173) serving Bangladeshi workers with Lebanon & Middle East expertise. Local support in Antelias, Lebanon.</p>
-          <div class="flex flex-wrap gap-5 mt-9">
-            <a href="#consultation" class="btn-gold text-black font-extrabold px-8 py-4 rounded-full text-lg shadow-xl flex items-center gap-2"><i class="fas fa-headset"></i> বিনামূল্যে পরামর্শ / Free Consult</a>
-            <a href="#services" class="border border-white/40 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">আমাদের সেবা / Our Services</a>
+          <h1 class="font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">Trusted Visa & Manpower Solutions <br>by <span class="gold-text">MD YASIN</span></h1>
+          <p class="text-lg sm:text-xl md:text-2xl mt-2 sm:mt-3 bn font-medium text-amber-100/90">এমডি ইয়াসিন-এর বিশ্বস্ত ভিসা ও ম্যানপাওয়ার সমাধান</p>
+          <p class="text-sm sm:text-base md:text-lg mt-4 sm:mt-5 max-w-2xl text-white/90">Government approved recruitment agency (RL-0173) serving Bangladeshi workers with Lebanon & Middle East expertise. Local support in Antelias, Lebanon.</p>
+          <div class="flex flex-wrap gap-3 sm:gap-5 mt-6 sm:mt-9">
+            <a href="#consultation" class="btn-gold text-black font-extrabold px-5 py-2.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg shadow-xl flex items-center gap-2"><i class="fas fa-headset"></i> বিনামূল্যে পরামর্শ / Free Consult</a>
+            <a href="#services" class="border border-white/40 bg-white/10 backdrop-blur-sm px-5 py-2.5 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-lg hover:bg-white/20 transition">আমাদের সেবা / Our Services</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Trust Badge -->
-    <div class="relative-section -mt-10 mb-8 z-20 container mx-auto px-6">
-      <div class="glass-card p-5 md:p-6 flex flex-wrap justify-between items-center gap-4 shadow-2xl border-l-8 border-l-[#d4af37] reveal">
-        <div><i class="fas fa-id-card text-3xl gold-text"></i><span class="font-bold text-lg ml-2">License RL-0173</span><p class="bn-small mt-0.5">সরকার অনুমোদিত</p></div>
-        <div><i class="fas fa-chalkboard-user text-3xl gold-text"></i><span class="font-bold text-lg ml-2">MD YASIN</span><p class="bn-small mt-0.5">ভিসা বিশেষজ্ঞ, ১৫+ বছর</p></div>
-        <div><i class="fas fa-handshake text-3xl gold-text"></i><span class="font-bold text-lg ml-2">International Support</span><p class="bn-small mt-0.5">বাংলাদেশ + লেবানন</p></div>
+    <!-- Trust Badge - Responsive Grid -->
+    <div class="relative-section -mt-8 sm:-mt-10 mb-6 sm:mb-8 z-20 container mx-auto px-4 sm:px-6">
+      <div class="glass-card p-4 sm:p-6 flex flex-wrap justify-between items-center gap-3 sm:gap-4 shadow-2xl border-l-8 border-l-[#d4af37] reveal">
+        <div class="flex items-center gap-2"><i class="fas fa-id-card text-2xl sm:text-3xl gold-text"></i><span class="font-bold text-base sm:text-lg ml-1">License RL-0173</span><p class="bn-small mt-0.5 hidden sm:block">সরকার অনুমোদিত</p></div>
+        <div class="flex items-center gap-2"><i class="fas fa-chalkboard-user text-2xl sm:text-3xl gold-text"></i><span class="font-bold text-base sm:text-lg ml-1">MD YASIN</span><p class="bn-small mt-0.5 hidden sm:block">ভিসা বিশেষজ্ঞ, ১৫+ বছর</p></div>
+        <div class="flex items-center gap-2"><i class="fas fa-handshake text-2xl sm:text-3xl gold-text"></i><span class="font-bold text-base sm:text-lg ml-1">International Support</span><p class="bn-small mt-0.5 hidden sm:block">বাংলাদেশ + লেবানন</p></div>
       </div>
     </div>
 
-    <!-- Services Section - Lebanon Work Permit with BIG Flag -->
-    <section id="services" class="py-20 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-          <span class="gold-text font-bold tracking-wider uppercase"><i class="fas fa-crown"></i> Premium Services</span>
-          <h2 class="font-extrabold text-4xl md:text-5xl text-gray-800 mt-2">Specialized Solutions <span class="gold-text">by YasinConsult</span></h2>
-          <div class="bn-subtle mt-1 text-sm">বিশেষায়িত সেবা</div>
-          <div class="w-28 h-1 bg-gradient-to-r from-[#d4af37] to-[#9a7618] mx-auto mt-4 rounded-full"></div>
+    <!-- Services Section - Fully Responsive -->
+    <section id="services" class="py-12 sm:py-16 md:py-20 relative-section">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+          <span class="gold-text font-bold tracking-wider uppercase text-xs sm:text-sm"><i class="fas fa-crown"></i> Premium Services</span>
+          <h2 class="font-extrabold text-2xl sm:text-4xl md:text-5xl text-gray-800 mt-2">Specialized Solutions <span class="gold-text">by YasinConsult</span></h2>
+          <div class="bn-subtle mt-1 text-xs sm:text-sm">বিশেষায়িত সেবা</div>
+          <div class="w-20 sm:w-28 h-1 bg-gradient-to-r from-[#d4af37] to-[#9a7618] mx-auto mt-3 sm:mt-4 rounded-full"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          <!-- Lebanon Work Permit Specialist Card with Prominent Lebanese Flag -->
-          <div class="glass-card p-8 reveal border-t-4 border-t-[#d4af37] relative overflow-hidden">
-            <!-- Large Lebanon Flag Badge at the top -->
-            <div class="flex justify-center mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-5xl mx-auto">
+          <!-- Lebanon Work Permit Specialist Card -->
+          <div class="glass-card p-5 sm:p-8 reveal border-t-4 border-t-[#d4af37]">
+            <div class="flex justify-center mb-4 sm:mb-6">
               <div class="lebanon-flag-badge">
                 <img src="https://flagcdn.com/w320/lb.png" alt="Lebanon Flag" class="flag-icon-large">
                 <div>
-                  <span class="font-black text-xl gold-text block">LEBANON</span>
-                  <span class="text-xs text-gray-500 bn">প্রধান ভিসা গন্তব্য</span>
+                  <span class="font-black text-base sm:text-xl gold-text block">LEBANON</span>
+                  <span class="text-[10px] sm:text-xs text-gray-500 bn">প্রধান ভিসা গন্তব্য</span>
                 </div>
               </div>
             </div>
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mb-5 shadow-md mx-auto"><i class="fas fa-passport text-3xl text-[#b68b1f]"></i></div>
-            <h3 class="font-extrabold text-2xl text-gray-800 text-center">Lebanon Work Permit Specialist</h3>
-            <div class="bn-subtle text-sm mb-3 text-center">লেবানন ওয়ার্ক পারমিট স্পেশালিস্ট</div>
-            <p class="text-gray-600 text-sm text-center">Embassy liaison, contract verification & legal attestation for Lebanon. Fast-track processing.</p>
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mb-4 sm:mb-5 shadow-md mx-auto"><i class="fas fa-passport text-2xl sm:text-3xl text-[#b68b1f]"></i></div>
+            <h3 class="font-extrabold text-xl sm:text-2xl text-gray-800 text-center">Lebanon Work Permit Specialist</h3>
+            <div class="bn-subtle text-xs sm:text-sm mb-2 sm:mb-3 text-center">লেবানন ওয়ার্ক পারমিট স্পেশালিস্ট</div>
+            <p class="text-gray-600 text-xs sm:text-sm text-center">Embassy liaison, contract verification & legal attestation for Lebanon. Fast-track processing.</p>
             <p class="bn-card-desc text-center">এম্বাসি কন্ট্রাক্ট, এটেস্টেশন ও দ্রুত ভিসা প্রক্রিয়া।</p>
-            <div class="mt-5 flex justify-center items-center gap-2 text-sm font-bold"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708</div>
+            <div class="mt-4 sm:mt-5 flex justify-center items-center gap-2 text-xs sm:text-sm font-bold"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708</div>
           </div>
-          <!-- Manpower & Air Ticketing - Lebanon added as first destination -->
-          <div class="glass-card p-8 reveal">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-gray-100 flex items-center justify-center mb-5 shadow-md mx-auto"><i class="fas fa-plane-departure text-3xl text-[#b68b1f]"></i></div>
-            <h3 class="font-extrabold text-2xl text-gray-800 text-center">Manpower & Air Ticketing</h3>
-            <div class="bn-subtle text-sm mb-2 text-center">ম্যানপাওয়ার ও এয়ার টিকেটিং</div>
-            <p class="text-gray-600 text-sm text-center">Govt. clearance, manpower supply, flight bookings to Lebanon, Saudi, UAE, Malaysia.</p>
-            <p class="bn-card-desc text-center">সৌদি, দুবাই, মালয়েশিয়ায় ক্লিয়ারেন্স ও ফ্লাইট বুকিং।</p>
-            <div class="mt-5 flex flex-wrap justify-center gap-2">
-              <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇱🇧 লেবানন</span>
-              <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇸🇦 সৌদি</span>
-              <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇦🇪 দুবাই</span>
-              <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇲🇾 মালয়েশিয়া</span>
+          <!-- Manpower & Air Ticketing -->
+          <div class="glass-card p-5 sm:p-8 reveal">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-gray-100 flex items-center justify-center mb-4 sm:mb-5 shadow-md mx-auto"><i class="fas fa-plane-departure text-2xl sm:text-3xl text-[#b68b1f]"></i></div>
+            <h3 class="font-extrabold text-xl sm:text-2xl text-gray-800 text-center">Manpower & Air Ticketing</h3>
+            <div class="bn-subtle text-xs sm:text-sm mb-2 sm:mb-2 text-center">ম্যানপাওয়ার ও এয়ার টিকেটিং</div>
+            <p class="text-gray-600 text-xs sm:text-sm text-center">Govt. clearance, manpower supply, flight bookings to Lebanon, Saudi, UAE, Malaysia.</p>
+            <p class="bn-card-desc text-center">লেবানন, সৌদি, দুবাই, মালয়েশিয়ায় ক্লিয়ারেন্স ও ফ্লাইট বুকিং।</p>
+            <div class="mt-4 sm:mt-5 flex flex-wrap justify-center gap-1.5 sm:gap-2">
+              <span class="bg-gray-100 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold">🇱🇧 লেবানন</span>
+              <span class="bg-gray-100 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold">🇸🇦 সৌদি</span>
+              <span class="bg-gray-100 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold">🇦🇪 দুবাই</span>
+              <span class="bg-gray-100 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold">🇲🇾 মালয়েশিয়া</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Global Presence / Dual Office -->
-    <section id="global" class="py-20 bg-gray-50/60 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="text-center mb-12 reveal">
-          <h2 class="font-extrabold text-4xl text-gray-800">Global Presence</h2>
+    <!-- Global Presence / Dual Office - Responsive -->
+    <section id="global" class="py-12 sm:py-16 md:py-20 bg-gray-50/60 relative-section">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="text-center mb-8 sm:mb-12 reveal">
+          <h2 class="font-extrabold text-2xl sm:text-4xl text-gray-800">Global Presence</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-          <div class="glass-card p-6 text-center">
-            <i class="fas fa-map-marker-alt text-4xl gold-text mb-3"></i>
-            <h3 class="font-bold text-2xl">Bangladesh Office</h3>
-            <p class="mt-2 font-semibold">BUSINESS ALLIANCE LTD. (RL-0173)</p>
-            <p class="text-gray-600">Dhaka, Bangladesh — Head Office</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 reveal">
+          <div class="glass-card p-5 sm:p-6 text-center">
+            <i class="fas fa-map-marker-alt text-3xl sm:text-4xl gold-text mb-3"></i>
+            <h3 class="font-bold text-xl sm:text-2xl">Bangladesh Office</h3>
+            <p class="mt-2 font-semibold text-sm sm:text-base">BUSINESS ALLIANCE LTD. (RL-0173)</p>
+            <p class="text-gray-600 text-xs sm:text-sm">Dhaka, Bangladesh — Head Office</p>
           </div>
-          <div class="glass-card p-6 text-center border-2 border-[#d4af37] shadow-xl">
-            <i class="fas fa-building text-4xl gold-text mb-3"></i>
-            <h3 class="font-bold text-2xl">Lebanon Office — Antelias</h3>
-            <p class="text-gray-600"><i class="fas fa-location-dot gold-text"></i> RABIH ELMURR, Antelias, Lebanon</p>
-            <p class="mt-2"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708  |  +961 78 797 299</p>
+          <div class="glass-card p-5 sm:p-6 text-center border-2 border-[#d4af37] shadow-xl">
+            <i class="fas fa-building text-3xl sm:text-4xl gold-text mb-3"></i>
+            <h3 class="font-bold text-xl sm:text-2xl">Lebanon Office — Antelias</h3>
+            <p class="text-gray-600 text-xs sm:text-sm"><i class="fas fa-location-dot gold-text"></i> RABIH ELMURR, Antelias, Lebanon</p>
+            <p class="mt-2 text-xs sm:text-sm"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708  |  +961 78 797 299</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why YasinConsult -->
-    <section class="py-16 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="grid md:grid-cols-3 gap-7 max-w-5xl mx-auto">
-          <div class="glass-card p-6 text-center reveal"><div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-file-contract text-white text-2xl"></i></div><h3 class="font-black text-xl mt-4">Govt. Approved License</h3><div class="bn-small">আরএল-০১৭৩</div></div>
-          <div class="glass-card p-6 text-center reveal"><div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-user-check text-white text-2xl"></i></div><h3 class="font-black text-xl mt-4">MD YASIN's Expertise</h3><div class="bn-small">১৫+ বছর অভিজ্ঞতা</div></div>
-          <div class="glass-card p-6 text-center reveal"><div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-globe text-white text-2xl"></i></div><h3 class="font-black text-xl mt-4">Dual Office Support</h3><div class="bn-small">বাংলাদেশ + লেবানন</div></div>
+    <!-- Why YasinConsult - Responsive Grid -->
+    <section class="py-12 sm:py-16 relative-section">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-7 max-w-5xl mx-auto">
+          <div class="glass-card p-5 sm:p-6 text-center reveal"><div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-file-contract text-white text-xl sm:text-2xl"></i></div><h3 class="font-black text-base sm:text-xl mt-3 sm:mt-4">Govt. Approved License</h3><div class="bn-small text-xs sm:text-sm">আরএল-০১৭৩</div></div>
+          <div class="glass-card p-5 sm:p-6 text-center reveal"><div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-user-check text-white text-xl sm:text-2xl"></i></div><h3 class="font-black text-base sm:text-xl mt-3 sm:mt-4">MD YASIN's Expertise</h3><div class="bn-small text-xs sm:text-sm">১৫+ বছর অভিজ্ঞতা</div></div>
+          <div class="glass-card p-5 sm:p-6 text-center reveal"><div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-globe text-white text-xl sm:text-2xl"></i></div><h3 class="font-black text-base sm:text-xl mt-3 sm:mt-4">Dual Office Support</h3><div class="bn-small text-xs sm:text-sm">বাংলাদেশ + লেবানন</div></div>
         </div>
       </div>
     </section>
 
     <!-- Testimonial -->
-    <section class="py-12 relative-section">
-      <div class="container mx-auto px-6 text-center reveal">
-        <i class="fas fa-quote-left text-5xl gold-text opacity-50"></i>
-        <p class="max-w-3xl mx-auto text-gray-700 italic text-lg mt-4 testimonial-bn">“বাংলাদেশি কর্মীদের জন্য লেবানন ও মধ্যপ্রাচ্যে কাজের ভিসা প্রক্রিয়ায় ব্যবসা অ্যালায়েন্স লিমিটেড ও ইয়াসিন স্যার অত্যন্ত পেশাদার।”</p>
-        <p class="font-bold mt-4">— Rashedul Islam, Manpower Coordinator, Lebanon</p>
+    <section class="py-10 sm:py-12 relative-section">
+      <div class="container mx-auto px-4 sm:px-6 text-center reveal">
+        <i class="fas fa-quote-left text-4xl sm:text-5xl gold-text opacity-50"></i>
+        <p class="max-w-3xl mx-auto text-gray-700 italic text-base sm:text-lg mt-4 testimonial-bn">“বাংলাদেশি কর্মীদের জন্য লেবানন ও মধ্যপ্রাচ্যে কাজের ভিসা প্রক্রিয়ায় ব্যবসা অ্যালায়েন্স লিমিটেড ও ইয়াসিন স্যার অত্যন্ত পেশাদার।”</p>
+        <p class="font-bold mt-3 sm:mt-4 text-sm sm:text-base">— Rashedul Islam, Manpower Coordinator, Lebanon</p>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="glass-card p-8 md:p-12 max-w-5xl mx-auto reveal">
-          <h2 class="font-extrabold text-4xl text-center text-gray-800">Contact <span class="gold-text">YasinConsult</span></h2>
-          <div class="grid md:grid-cols-2 gap-8 mt-10">
-            <div class="space-y-5">
-              <div class="flex items-center gap-3 flex-wrap">
-                <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
-                <span class="font-bold">WhatsApp :</span>
-                <div class="flex flex-wrap gap-2">
+    <!-- Contact Section - Responsive -->
+    <section id="contact" class="py-12 sm:py-16 md:py-20 relative-section">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="glass-card p-5 sm:p-8 md:p-12 max-w-5xl mx-auto reveal">
+          <h2 class="font-extrabold text-2xl sm:text-3xl md:text-4xl text-center text-gray-800">Contact <span class="gold-text">YasinConsult</span></h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-10">
+            <div class="space-y-4 sm:space-y-5">
+              <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <i class="fab fa-whatsapp text-green-600 text-xl sm:text-2xl"></i>
+                <span class="font-bold text-sm sm:text-base">WhatsApp :</span>
+                <div class="flex flex-wrap gap-1 sm:gap-2 text-sm sm:text-base">
                   <a href="https://wa.me/96176074708" class="hover:underline gold-text font-medium">+961 76 074 708</a>
                   <span>/</span>
                   <a href="https://wa.me/96178797299" class="hover:underline gold-text font-medium">+961 78 797 299</a>
                 </div>
               </div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <i class="fas fa-phone-alt gold-text text-lg"></i>
-                <div class="flex flex-wrap gap-2">
+              <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <i class="fas fa-phone-alt gold-text text-base sm:text-lg"></i>
+                <div class="flex flex-wrap gap-1 sm:gap-2 text-sm sm:text-base">
                   <span class="font-medium">Lebanon:</span>
                   <span>+961 76 074 708, +961 78 797 299</span>
                 </div>
               </div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <i class="fas fa-envelope gold-text text-lg"></i>
-                <a href="mailto:mohmd.90yasin@gmail.com" class="hover:underline break-all">mohmd.90yasin@gmail.com</a>
+              <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <i class="fas fa-envelope gold-text text-base sm:text-lg"></i>
+                <a href="mailto:mohmd.90yasin@gmail.com" class="hover:underline break-all text-sm sm:text-base">mohmd.90yasin@gmail.com</a>
               </div>
-              <div class="flex items-start gap-3">
-                <i class="fas fa-map-pin gold-text text-lg mt-1"></i>
-                <div class="space-y-2">
+              <div class="flex items-start gap-2 sm:gap-3">
+                <i class="fas fa-map-pin gold-text text-base sm:text-lg mt-1"></i>
+                <div class="space-y-2 text-sm sm:text-base">
                   <p><strong class="gold-text">Lebanon Office:</strong><br> RABIH ELMURR, Antelias, Lebanon.</p>
                   <p><strong class="gold-text">Bangladesh Office:</strong><br> Business Alliance Ltd, Dhaka (RL-0173)</p>
                 </div>
               </div>
             </div>
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-              <p class="font-bold gold-text text-lg">Direct Contact</p>
-              <p class="mt-3 text-gray-700 leading-relaxed">Call or WhatsApp for any visa or manpower related inquiries. Our expert team will guide you.</p>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href="tel:+96176074708" class="bg-[#004D40] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#0a5c50] transition flex items-center gap-2"><i class="fas fa-phone"></i> Call (Lebanon)</a>
-                <a href="https://wa.me/96176074708" target="_blank" class="bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-green-700 transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+            <div class="bg-gray-50 p-4 sm:p-6 rounded-xl border border-gray-100">
+              <p class="font-bold gold-text text-base sm:text-lg">Direct Contact</p>
+              <p class="mt-2 sm:mt-3 text-gray-700 leading-relaxed text-sm sm:text-base">Call or WhatsApp for any visa or manpower related inquiries. Our expert team will guide you.</p>
+              <div class="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
+                <a href="tel:+96176074708" class="bg-[#004D40] text-white px-3 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-[#0a5c50] transition flex items-center gap-2"><i class="fas fa-phone"></i> Call (Lebanon)</a>
+                <a href="https://wa.me/96176074708" target="_blank" class="bg-green-600 text-white px-3 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-green-700 transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
               </div>
             </div>
           </div>
@@ -356,29 +391,29 @@
       </div>
     </section>
 
-    <!-- Consultation CTA -->
-    <section id="consultation" class="pb-20">
-      <div class="container mx-auto px-6 text-center reveal">
-        <div class="bg-black/5 backdrop-blur-sm rounded-3xl p-8 max-w-3xl mx-auto border border-[#d4af37]/40">
-          <h3 class="font-extrabold text-3xl gold-text">Free Consultation</h3>
-          <p class="text-gray-600 mt-2">Get expert guidance for your desired work visa. Contact us today.</p>
-          <a href="https://wa.me/96176074708?text=Hello%20MD%20YASIN%2C%20I%20need%20a%20free%20consultation%20for%20work%20permit." class="inline-block mt-6 btn-gold text-black font-bold px-8 py-3 rounded-full shadow-lg"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
+    <!-- Consultation CTA - Responsive -->
+    <section id="consultation" class="pb-12 sm:pb-20">
+      <div class="container mx-auto px-4 sm:px-6 text-center reveal">
+        <div class="bg-black/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto border border-[#d4af37]/40">
+          <h3 class="font-extrabold text-2xl sm:text-3xl gold-text">Free Consultation</h3>
+          <p class="text-gray-600 mt-2 text-sm sm:text-base">Get expert guidance for your desired work visa. Contact us today.</p>
+          <a href="https://wa.me/96176074708?text=Hello%20MD%20YASIN%2C%20I%20need%20a%20free%20consultation%20for%20work%20permit." class="inline-block mt-4 sm:mt-6 btn-gold text-black font-bold px-5 py-2.5 sm:px-8 sm:py-3 rounded-full shadow-lg text-sm sm:text-base"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#0a1917] text-gray-300 pt-12 pb-6 relative-section border-t-4 border-t-[#d4af37]">
-      <div class="container mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Footer - Responsive Grid -->
+    <footer class="bg-[#0a1917] text-gray-300 pt-10 sm:pt-12 pb-6 relative-section border-t-4 border-t-[#d4af37]">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         <div>
-          <i class="fas fa-globe-asia text-3xl gold-text"></i>
-          <div class="font-black text-xl text-white mt-2">YasinConsult.com</div>
+          <i class="fas fa-globe-asia text-2xl sm:text-3xl gold-text"></i>
+          <div class="font-black text-lg sm:text-xl text-white mt-2">YasinConsult.com</div>
           <p class="text-xs mt-1">Govt. License RL-0173 | Business Alliance Ltd.</p>
           <p class="text-xs mt-2">Lead Consultant: MD YASIN (Visa Specialist)</p>
         </div>
         <div>
-          <h4 class="font-bold text-white text-lg">Contact</h4>
-          <ul class="mt-3 space-y-2 text-sm">
+          <h4 class="font-bold text-white text-base sm:text-lg">Contact</h4>
+          <ul class="mt-3 space-y-2 text-xs sm:text-sm">
             <li><i class="fas fa-phone-alt gold-text w-5"></i> +961 76 074 708</li>
             <li><i class="fas fa-phone-alt gold-text w-5"></i> +961 78 797 299</li>
             <li><i class="fas fa-envelope gold-text w-5"></i> mohmd.90yasin@gmail.com</li>
@@ -386,14 +421,14 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-bold text-white text-lg">Office</h4>
-          <p class="text-sm mt-3"><i class="fas fa-map-marker-alt gold-text"></i> Lebanon: RABIH ELMURR, Antelias, Lebanon</p>
-          <p class="text-sm mt-2"><i class="fas fa-map-marker-alt gold-text"></i> Bangladesh: Business Alliance Ltd, Dhaka (RL-0173)</p>
+          <h4 class="font-bold text-white text-base sm:text-lg">Office</h4>
+          <p class="text-xs sm:text-sm mt-3"><i class="fas fa-map-marker-alt gold-text"></i> Lebanon: RABIH ELMURR, Antelias, Lebanon</p>
+          <p class="text-xs sm:text-sm mt-2"><i class="fas fa-map-marker-alt gold-text"></i> Bangladesh: Business Alliance Ltd, Dhaka (RL-0173)</p>
         </div>
         <div>
-          <h4 class="font-bold text-white text-lg">Services</h4>
-          <p class="text-sm mt-2">Lebanon Work Permit | Manpower Clearance | Air Ticketing | Contract Papers | Saudi, UAE, Malaysia Support</p>
-          <div class="mt-4 text-xs text-gray-400">© 2025 YasinConsult — All Rights Reserved</div>
+          <h4 class="font-bold text-white text-base sm:text-lg">Services</h4>
+          <p class="text-xs sm:text-sm mt-2">Lebanon Work Permit | Manpower Clearance | Air Ticketing | Contract Papers | Saudi, UAE, Malaysia Support</p>
+          <div class="mt-4 text-[10px] sm:text-xs text-gray-400">© 2025 YasinConsult — All Rights Reserved</div>
         </div>
       </div>
     </footer>
