@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <title>Embassy Contract Papers | YasinConsult</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.maateen.me/sutonny-mj/font.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #0a0a1a;
+      font-family: 'Montserrat', sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Premium glass container */
+    .contract-container {
+      max-width: 210mm;
+      width: 100%;
+      background: linear-gradient(135deg, rgba(20,20,45,0.98), rgba(15,15,35,0.98));
+      backdrop-filter: blur(2px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(201, 160, 61, 0.4);
+      box-shadow: 0 25px 45px -12px black;
+      padding: 8mm 10mm;
+      font-size: 10px;
+      line-height: 1.35;
+      color: #e0e0e0;
+    }
+    /* gold accents */
+    .gold-text { color: #c9a03d; }
+    .border-gold { border-color: #c9a03d; }
+    .section-title {
+      font-weight: 800;
+      font-size: 11px;
+      margin: 8px 0 4px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #c9a03d;
+      display: inline-block;
+      letter-spacing: 1px;
+      color: #c9a03d;
+    }
+    input, .input-field {
+      background: rgba(0,0,0,0.6);
+      border: none;
+      border-bottom: 1px solid #c9a03d80;
+      color: white;
+      padding: 2px 4px;
+      font-size: 9px;
+      font-family: 'Courier New', monospace;
+      width: 100%;
+      max-width: 180px;
+      transition: 0.2s;
+    }
+    input:focus {
+      outline: none;
+      border-bottom-color: #e6b84e;
+      background: #1a1a3a;
+    }
+    .visa-table {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #c9a03d80;
+      margin-bottom: 10px;
+    }
+    .visa-item {
+      flex: 1 1 20%;
+      border: 1px solid #c9a03d80;
+      padding: 3px 5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 8px;
+      background: rgba(0,0,0,0.3);
+    }
+    .visa-item span { font-weight: 600; white-space: nowrap; color:#c9a03d; }
+    .two-col { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 5px; }
+    .col { flex: 1 1 48%; min-width: 200px; }
+    .row { display: flex; flex-wrap: wrap; margin-bottom: 3px; align-items: baseline; }
+    .label { font-weight: 600; min-width: 105px; font-size: 9px; color: #c9a03d; }
+    .value { flex: 1; }
+    .clause { margin: 5px 0; text-align: justify; font-size: 9px; }
+    .clause input { display: inline-block; width: auto; min-width: 80px; margin: 0 3px; }
+    .print-btn {
+      background: linear-gradient(135deg, #c9a03d, #e6b84e);
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 11px;
+      transition: 0.2s;
+    }
+    .print-btn:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(201,160,61,0.4); }
+    @media print {
+      body { background: white; padding: 0; }
+      .contract-container { background: white; color: black; border: none; box-shadow: none; padding: 4mm; }
+      input, .input-field { border-bottom: 1px solid #999; background: white; color: black; }
+      .visa-item, .visa-table { border-color: #aaa; }
+      .label { color: #333; }
+      .print-btn, .no-print { display: none; }
+      .gold-text { color: #b8860b; }
+      .section-title { color: #b8860b; border-bottom-color: #b8860b; }
+    }
+    @media (max-width: 768px) {
+      body { padding: 8px; }
+      .contract-container { padding: 4mm; }
+      .visa-item { flex: 1 1 100%; }
+      .label { min-width: 90px; }
+      input { max-width: 100%; }
+    }
+    hr { border-color: #c9a03d40; margin: 5px 0; }
+    .header-stamp { text-align: center; font-weight: bold; font-size: 10px; margin-bottom: 5px; }
+    .dual-lang-note { font-style: italic; font-size: 8px; text-align: center; color: #aaa; }
+    h2 { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body>
+<div class="contract-container" id="contractForm">
+  <div class="header-stamp gold-text"># For official use of the Embassy only</div>
+
+  <div class="visa-table">
+    <div class="visa-item"><span>Visa #</span> <input type="text" placeholder="Visa #"></div>
+    <div class="visa-item"><span>Bangladesh</span></div>
+    <div class="visa-item"><span>Date of Visa</span> <input type="text" placeholder="DD/MM/YYYY"></div>
+    <div class="visa-item"><span>General Security Int'l LAR #</span> <input type="text" placeholder="LAR #"></div>
+    <div class="visa-item"><span>Exp. Date</span> <input type="text" placeholder="Expiry"></div>
+    <div class="visa-item"><span>Health & Life Insurance</span> <input type="text" placeholder="Insurance"></div>
+    <div class="visa-item"><span>MOL #</span> <input type="text" placeholder="MOL #"></div>
+    <div class="visa-item"><span>Name of Insurance</span> <input type="text" placeholder="Ins. name"></div>
+    <div class="visa-item"><span>MOL Guarantee avail.</span> <input type="text" placeholder="Guarantee"></div>
+    <div class="visa-item"><span>Ministry of Labor Int'l Date of input Check</span> <input type="text" placeholder="Check date"></div>
+  </div>
+
+  <h2 style="text-align:center; font-size:13px; margin:5px 0;" class="gold-text">Contract of Employment for Worker from Bangladesh</h2>
+  <p class="dual-lang-note">To be duly filled in English & signed by Employer to the Embassy of the People's Republic of Bangladesh in Lebanon<br>كل المعلومات المطلوبة في الاستمارة يجب أن تكون باللغة الإنجليزية</p>
+
+  <p class="text-sm mb-1">This Employment Contract is executed and entered into by and between the followings:</p>
+
+  <div class="section-title">A- Employer Particulars:</div>
+  <div class="two-col">
+    <div class="col"><div class="row"><span class="label">First Name:</span> <input type="text" placeholder="ARIF"></div><div class="row"><span class="label">Last Name:</span> <input type="text"></div><div class="row"><span class="label">ID #:</span> <input type="text" placeholder="54125222"></div><div class="row"><span class="label">Passport No:</span> <input type="text"></div><div class="row"><span class="label">Date of Expiry:</span> <input type="text"></div><div class="row"><span class="label">Father's Name:</span> <input type="text" placeholder="ESSAM"></div><div class="row"><span class="label">Nationality:</span> <input type="text" placeholder="MAKKAVI"></div></div>
+    <div class="col"><div class="row"><span class="label">Date of Birth:</span> <input type="text"></div><div class="row"><span class="label">Place of Birth:</span> <input type="text"></div><div class="row"><span class="label">Home Street:</span> <input type="text" placeholder="MAINSTREET"></div><div class="row"><span class="label">Telephone #:</span> <input type="text" placeholder="71/424929"></div><div class="row"><span class="label">Mobile #:</span> <input type="text"></div><div class="row"><span class="label">Job/Title:</span> <input type="text" placeholder="BUSINESS"></div><div class="row"><span class="label">Email:</span> <input type="text"></div></div>
+  </div>
+
+  <div class="section-title">B- Bangladeshi Helper Particulars:</div>
+  <div class="two-col">
+    <div class="col"><div class="row"><span class="label">Name:</span> <input type="text" placeholder="RAFAZA"></div><div class="row"><span class="label">Father's Name:</span> <input type="text" placeholder="MD RAWSON KHALIFA"></div><div class="row"><span class="label">Mother's Name:</span> <input type="text" placeholder="MST SAHERA BEGUM"></div><div class="row"><span class="label">Profession:</span> <input type="text" placeholder="HOUSE MADE"></div><div class="row"><span class="label">Village:</span> <input type="text" placeholder="NORTH BAHIRDA"></div></div>
+    <div class="col"><div class="row"><span class="label">District:</span> <input type="text"></div><div class="row"><span class="label">Passport No:</span> <input type="text"></div><div class="row"><span class="label">Date of Birth:</span> <input type="text"></div><div class="row"><span class="label">Nationality:</span> <input type="text" value="Bangladeshi"></div><div class="row"><span class="label">Religion:</span> <input type="text"></div><div class="row"><span class="label">Marital Status:</span> <input type="text"></div></div>
+  </div>
+
+  <div class="two-col">
+    <div class="col"><div class="section-title">C- Agency in Lebanon</div><div class="row"><span class="label">Name:</span> <input type="text" placeholder="AL MAKZOUM"></div><div class="row"><span class="label">Contact Person:</span> <input type="text" placeholder="MR ATIF MAKZOOM"></div><div class="row"><span class="label">Street:</span> <input type="text" placeholder="MAZRA"></div><div class="row"><span class="label">Mobile #:</span> <input type="text" placeholder="76/752558"></div><div class="row"><span class="label">Email:</span> <input type="text"></div></div>
+    <div class="col"><div class="section-title">D- Recruiting Agency BD</div><div class="row"><span class="label">Name:</span> <input type="text" placeholder="MS MOHD OVERSEAS INT."></div><div class="row"><span class="label">Contact Person:</span> <input type="text" placeholder="MOHAMMAD MOTAHER HOSSAIN"></div><div class="row"><span class="label">Mobile #:</span> <input type="text" placeholder="01811/282922"></div><div class="row"><span class="label">Reg. #:</span> <input type="text" placeholder="1223"></div></div>
+  </div>
+
+  <hr>
+  <div class="clauses-wrapper">
+    <div class="clause"><strong>1.</strong> Site of employment: <input type="text" placeholder="residence address">. Embassy informed within 7 days.</div>
+    <div class="clause"><strong>2.</strong> Contract duration: 3 years inclusive of 90 days probation.</div>
+    <div class="clause"><strong>3.</strong> Monthly salary <input type="text" placeholder="300$"> paid monthly.</div>
+    <div class="clause"><strong>4.</strong> Working hours: max 8 hours/day.</div>
+    <div class="clause"><strong>5.</strong> Free passage from Bangladesh and back.</div>
+    <div class="clause"><strong>6.</strong> Employer provides resident visa & health insurance.</div>
+    <div class="clause"><strong>7.</strong> Free suitable accommodation & food.</div>
+    <div class="clause"><strong>8.</strong> Free medical services & winter clothing below 20°C.</div>
+  </div>
+
+  <div class="page-marker gold-text text-right mt-2 text-xs">Page 1</div>
+  <div class="btn-print no-print text-center mt-3">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Download as PDF (A4)</button>
+    <p class="text-xs text-gray-400 mt-1">Fill all fields, then print or save as PDF.</p>
+  </div>
+</div>
+</body>
+</html>
