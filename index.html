@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
   <title>YasinConsult | Business Alliance Ltd. - Govt. Approved Visa & Manpower</title>
+  <!-- Google Fonts: Montserrat + SutonnyMJ Bengali -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.maateen.me/sutonny-mj/font.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,19 +32,41 @@
     .lebanon-flag-badge { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #fff5e6, #ffffff); padding: 12px 20px; border-radius: 60px; border: 1px solid rgba(212, 175, 55, 0.4); }
     .flag-icon-large { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
     .contract-card { background: linear-gradient(135deg, #fef9e6, #ffffff); border-left: 6px solid #d4af37; }
-    /* Work Slider Styles */
-    .work-slider-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); background: #1e2a25; }
-    .work-slider-frame { position: relative; width: 100%; padding-bottom: 56.25%; background: #0f1917; }
-    .work-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease-in-out; }
-    .work-slide.active { opacity: 1; z-index: 2; }
-    .slider-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; cursor: pointer; z-index: 20; transition: 0.2s; border: 1px solid rgba(212,175,55,0.6); }
-    .slider-nav-btn:hover { background: #d4af37; color: black; }
-    .slider-nav-left { left: 16px; }
-    .slider-nav-right { right: 16px; }
-    .slider-dots-container { position: absolute; bottom: 16px; left: 0; right: 0; display: flex; justify-content: center; gap: 12px; z-index: 20; }
-    .work-dot { width: 10px; height: 10px; background: rgba(255,255,240,0.7); border-radius: 50%; cursor: pointer; transition: all 0.2s; }
-    .work-dot.active-dot { background: #d4af37; transform: scale(1.2); width: 12px; height: 12px; }
-    @media (max-width: 640px) { .slider-nav-btn { width: 34px; height: 34px; font-size: 1.2rem; } .slider-nav-left { left: 8px; } .slider-nav-right { right: 8px; } .work-dot { width: 8px; height: 8px; } .work-dot.active-dot { width: 10px; height: 10px; } }
+    /* Static image gallery styles - vertical list */
+    .static-gallery {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      margin-bottom: 2rem;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+      background: white;
+    }
+    .gallery-item:hover {
+      transform: scale(1.01);
+    }
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .img-caption {
+      padding: 0.75rem 1rem;
+      background: #fffaf0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #5a4a1a;
+      text-align: center;
+      border-top: 1px solid #f0e0b0;
+    }
+    @media (max-width: 768px) {
+      .gallery-item { margin-bottom: 1.5rem; }
+      .img-caption { font-size: 0.75rem; }
+    }
   </style>
 </head>
 <body>
@@ -53,7 +76,7 @@
     <i class="fas fa-certificate gold-text mr-1"></i> Govt. Approved Recruiting License: RL-0173 | BUSINESS ALLIANCE LTD. (Bangladesh) | <span class="gold-text">Authorized by MD YASIN</span>
   </div>
 
-  <!-- Sticky Navigation -->
+  <!-- Sticky Glass Navigation -->
   <header class="sticky top-0 z-50 glass-nav">
     <div class="container mx-auto px-6 lg:px-10 py-3 flex flex-wrap justify-between items-center">
       <div class="flex items-center gap-3">
@@ -105,29 +128,21 @@
       </div>
     </div>
 
-    <!-- ========== আমাদের কাজ কি? (IMAGE SLIDER with local images) ========== -->
+    <!-- ========== STATIC VERTICAL IMAGE GALLERY (NO SLIDER) ========== -->
     <section class="py-12 relative-section bg-gradient-to-b from-amber-50/20 to-white/80">
       <div class="container mx-auto px-6 lg:px-10">
         <div class="text-center max-w-3xl mx-auto mb-8 reveal">
-          <div class="inline-flex items-center gap-2 bg-amber-100/60 px-4 py-1 rounded-full gold-text text-sm font-bold mb-2"><i class="fas fa-camera-retro"></i> ভিজুয়াল স্টোরি</div>
+          <div class="inline-flex items-center gap-2 bg-amber-100/60 px-4 py-1 rounded-full gold-text text-sm font-bold mb-2"><i class="fas fa-images"></i> আমাদের কাজের ছবি</div>
           <h2 class="font-black text-4xl md:text-5xl text-gray-800">আমাদের কাজ কি? <span class="gold-text">(Our Work)</span></h2>
           <div class="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#b68b1f] mx-auto mt-3 rounded-full"></div>
-          <p class="bn text-gray-600 mt-3">ভিসা প্রক্রিয়া, চুক্তিপত্র ও সেবার মুহূর্ত — মসৃণ ট্রানজেকশন স্লাইডারে দেখুন</p>
+          <p class="bn text-gray-600 mt-3">নিচের ছবিগুলোতে আমাদের ভিসা প্রক্রিয়া, চুক্তিপত্র ও সেবার বিভিন্ন দিক তুলে ধরা হয়েছে</p>
         </div>
-        
-        <div class="max-w-5xl mx-auto reveal">
-          <div class="work-slider-container">
-            <div class="work-slider-frame" id="workSliderFrame">
-              <!-- images injected via JS -->
-            </div>
-            <div class="slider-nav-btn slider-nav-left" id="workPrevBtn"><i class="fas fa-chevron-left"></i></div>
-            <div class="slider-nav-btn slider-nav-right" id="workNextBtn"><i class="fas fa-chevron-right"></i></div>
-            <div class="slider-dots-container" id="workDotsContainer"></div>
-          </div>
-          <div class="text-center mt-6 text-sm text-gray-500 bn flex items-center justify-center gap-3 flex-wrap">
-            <i class="fas fa-arrows-spin gold-text"></i> প্রতি ২ সেকেন্ডে ছবি পরিবর্তন | 
-            <i class="fas fa-mobile-alt gold-text"></i> মোবাইল ও ট্যাব বান্ধব
-          </div>
+
+        <div class="static-gallery reveal" id="imageGallery">
+          <!-- images will be injected via JS for easy editing -->
+        </div>
+        <div class="text-center mt-4 text-sm text-gray-500 bn">
+          <i class="fas fa-edit gold-text"></i> আপনি চাইলে নিচের JavaScript-এর `imgWorkList` অ্যারেতে নিজের ছবির নাম বসিয়ে দেবেন
         </div>
       </div>
     </section>
@@ -238,109 +253,46 @@
   <a href="https://wa.me/96176074708?text=Assalamualaikum%20MD%20Yasin,%20I%20need%20visa%20consultation" target="_blank" class="whatsapp-float flex items-center gap-2 text-white font-bold shadow-2xl"><i class="fab fa-whatsapp text-xl"></i> <span class="hidden sm:inline">Consult MD YASIN</span></a>
 
   <script>
-    // ========== LOCAL IMAGES (same folder as HTML) ==========
+    // ========== STATIC IMAGE LIST (6 images, vertical order) ==========
+    // আপনি এখানে আপনার ছবির নাম বসান। বর্তমানে প্লেসহোল্ডার ইমেজ ব্যবহার করা হয়েছে।
     const imgWorkList = [
       "1amra ki kori.png",
       "2 kon kon seba paben.png",
       "3 amra kibabe kaj kori.png",
       "4 kano yasinconsult.png",
-      "5 important.png",
+      "5 important .png",
       "6 amra aci apnr pase.png"
     ];
+    // উদাহরণ: [ "1.png", "2.png", "3.png", "4.png", "5.png", "6.png" ]
 
-    let currentWorkIndex = 0;
-    let workSlides = [];
-    let workInterval;
-    const workFrame = document.getElementById('workSliderFrame');
-    const dotsWorkContainer = document.getElementById('workDotsContainer');
-    
-    function buildWorkSlider() {
-      if (!workFrame) return;
-      workFrame.innerHTML = '';
-      dotsWorkContainer.innerHTML = '';
-      workSlides = [];
+    const galleryContainer = document.getElementById('imageGallery');
+    if (galleryContainer) {
+      galleryContainer.innerHTML = '';
       imgWorkList.forEach((src, idx) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'gallery-item';
         const img = document.createElement('img');
         img.src = src;
         img.alt = `YasinConsult work ${idx+1}`;
-        img.className = 'work-slide';
-        if (idx === 0) img.classList.add('active');
-        img.style.objectFit = 'cover';
+        img.className = 'gallery-img';
         img.onerror = () => console.warn(`ছবি লোড হয়নি: ${src}`);
-        workFrame.appendChild(img);
-        workSlides.push(img);
-        const dot = document.createElement('button');
-        dot.className = `work-dot ${idx === 0 ? 'active-dot' : ''}`;
-        dot.setAttribute('data-index', idx);
-        dot.addEventListener('click', () => {
-          if (workInterval) clearInterval(workInterval);
-          goToWorkSlide(idx);
-          startWorkAutoSlide();
-        });
-        dotsWorkContainer.appendChild(dot);
+        const caption = document.createElement('div');
+        caption.className = 'img-caption bn';
+        caption.innerText = `📸 আমাদের কাজের অংশ - ${idx+1}`;
+        itemDiv.appendChild(img);
+        itemDiv.appendChild(caption);
+        galleryContainer.appendChild(itemDiv);
       });
     }
-    
-    function updateWorkUI() {
-      workSlides.forEach((slide, i) => {
-        if (i === currentWorkIndex) {
-          slide.classList.add('active');
-          const dot = dotsWorkContainer?.children[i];
-          if (dot) dot.classList.add('active-dot');
-        } else {
-          slide.classList.remove('active');
-          const dot = dotsWorkContainer?.children[i];
-          if (dot) dot.classList.remove('active-dot');
-        }
-      });
-    }
-    
-    function goToWorkSlide(index) {
-      if (index < 0) index = workSlides.length - 1;
-      if (index >= workSlides.length) index = 0;
-      currentWorkIndex = index;
-      updateWorkUI();
-    }
-    
-    function nextWorkSlide() { goToWorkSlide(currentWorkIndex + 1); }
-    function prevWorkSlide() { goToWorkSlide(currentWorkIndex - 1); }
-    
-    function startWorkAutoSlide() {
-      if (workInterval) clearInterval(workInterval);
-      workInterval = setInterval(() => nextWorkSlide(), 2000);
-    }
-    
-    const workPrev = document.getElementById('workPrevBtn');
-    const workNext = document.getElementById('workNextBtn');
-    if (workPrev && workNext) {
-      workPrev.addEventListener('click', () => {
-        if (workInterval) clearInterval(workInterval);
-        prevWorkSlide();
-        startWorkAutoSlide();
-      });
-      workNext.addEventListener('click', () => {
-        if (workInterval) clearInterval(workInterval);
-        nextWorkSlide();
-        startWorkAutoSlide();
-      });
-    }
-    
-    if (workFrame) {
-      buildWorkSlider();
-      startWorkAutoSlide();
-      const sliderContainer = document.querySelector('.work-slider-container');
-      if (sliderContainer) {
-        sliderContainer.addEventListener('mouseenter', () => { if (workInterval) clearInterval(workInterval); });
-        sliderContainer.addEventListener('mouseleave', () => startWorkAutoSlide());
-      }
-    }
-    
-    // Scroll reveal
+
+    // Scroll reveal observer (unchanged)
     const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
     revealElements.forEach(el => observer.observe(el));
-    
-    // Mobile menu
+
+    // Mobile menu toggle
     const mobileBtn = document.getElementById('mobileBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileBtn && mobileMenu) {
