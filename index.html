@@ -11,10 +11,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; background: #fefef7; overflow-x: hidden; }
+    body { 
+      font-family: 'Montserrat', sans-serif; 
+      background: #fefef7; 
+      overflow-x: hidden; 
+      line-height: 1.5;
+    }
     .bn, .bengali, [lang="bn"], .bn-subtle, .bn-small, .bn-card-desc, .testimonial-bn { font-family: 'SutonnyMJ', 'Noto Sans Bengali', sans-serif; }
     .glass-nav { background: rgba(10, 25, 23, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(212, 175, 55, 0.3); }
-    .glass-card { background: rgba(255, 255, 245, 0.94); backdrop-filter: blur(12px); border-radius: 1.75rem; border: 1px solid rgba(212, 175, 55, 0.3); transition: all 0.35s cubic-bezier(0.2, 0.95, 0.4, 1.1); }
+    .glass-card { 
+      background: rgba(255, 255, 245, 0.94); 
+      backdrop-filter: blur(12px); 
+      border-radius: 1.75rem; 
+      border: 1px solid rgba(212, 175, 55, 0.3); 
+      transition: all 0.35s cubic-bezier(0.2, 0.95, 0.4, 1.1);
+    }
     .glass-card:hover { transform: translateY(-8px); border-color: #d4af37; }
     .gold-gradient { background: linear-gradient(135deg, #d4af37, #b68b1f); }
     .gold-text { color: #d4af37; }
@@ -26,11 +37,30 @@
     .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .license-bar { background: #0a1917; color: #e6c87b; font-size: 0.8rem; }
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 999; background: #25D366; border-radius: 50px; padding: 12px 20px; transition: 0.2s; }
+    .whatsapp-float { 
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+      z-index: 999; 
+      background: #25D366; 
+      border-radius: 60px; 
+      padding: 10px 18px; 
+      transition: 0.2s;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
     .whatsapp-float:hover { transform: scale(1.05); background: #20b359; }
-    @media (max-width: 640px) { .whatsapp-float { padding: 10px 16px; bottom: 18px; right: 18px; } .whatsapp-float span { font-size: 0.75rem; } }
-    .lebanon-flag-badge { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #fff5e6, #ffffff); padding: 12px 20px; border-radius: 60px; border: 1px solid rgba(212, 175, 55, 0.4); }
-    .flag-icon-large { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+    @media (min-width: 640px) { 
+      .whatsapp-float { bottom: 28px; right: 28px; padding: 12px 22px; }
+      .whatsapp-float span { font-size: 0.9rem; }
+    }
+    .lebanon-flag-badge { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #fff5e6, #ffffff); padding: 10px 18px; border-radius: 60px; border: 1px solid rgba(212, 175, 55, 0.4); }
+    @media (min-width: 768px) {
+      .lebanon-flag-badge { padding: 12px 24px; }
+    }
+    .flag-icon-large { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+    @media (min-width: 768px) {
+      .flag-icon-large { width: 48px; height: 48px; }
+    }
     .contract-card { background: linear-gradient(135deg, #fef9e6, #ffffff); border-left: 6px solid #d4af37; }
     /* Static image gallery styles - vertical list */
     .static-gallery {
@@ -38,10 +68,10 @@
       margin: 0 auto;
     }
     .gallery-item {
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
       border-radius: 1.5rem;
       overflow: hidden;
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
       transition: transform 0.2s ease;
       background: white;
     }
@@ -57,60 +87,112 @@
     .img-caption {
       padding: 0.75rem 1rem;
       background: #fffaf0;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: #5a4a1a;
       text-align: center;
       border-top: 1px solid #f0e0b0;
     }
-    @media (max-width: 768px) {
-      .gallery-item { margin-bottom: 1.5rem; }
-      .img-caption { font-size: 0.75rem; }
+    @media (min-width: 640px) {
+      .gallery-item { margin-bottom: 2rem; }
+      .img-caption { font-size: 0.9rem; padding: 0.9rem 1.2rem; }
+    }
+    /* Additional responsive spacing utilities */
+    .section-padding {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .section-padding {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .section-padding {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+    }
+    /* Ensure no horizontal overflow */
+    img, iframe, video, .container, .glass-card {
+      max-width: 100%;
+    }
+    .container-custom {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    /* Smooth touch for buttons */
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
   </style>
 </head>
 <body>
 
   <!-- Top License Bar -->
-  <div class="license-bar py-2 px-4 text-center text-sm font-semibold tracking-wide">
+  <div class="license-bar py-2.5 px-4 text-center text-xs md:text-sm font-semibold tracking-wide">
     <i class="fas fa-certificate gold-text mr-1"></i> Govt. Approved Recruiting License: RL-0173 | BUSINESS ALLIANCE LTD. (Bangladesh) | <span class="gold-text">Authorized by MD YASIN</span>
   </div>
 
   <!-- Sticky Glass Navigation -->
   <header class="sticky top-0 z-50 glass-nav">
-    <div class="container mx-auto px-6 lg:px-10 py-3 flex flex-wrap justify-between items-center">
-      <div class="flex items-center gap-3">
-        <i class="fas fa-globe-asia text-3xl gold-text"></i>
-        <div><span class="font-black text-2xl tracking-tight text-white">Yasin<span class="gold-text">Consult</span>.com</span><div class="text-xs text-gray-300 bn">বিজনেস অ্যালায়েন্স লিমিটেড</div></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <i class="fas fa-globe-asia text-2xl sm:text-3xl gold-text"></i>
+        <div>
+          <span class="font-black text-xl sm:text-2xl tracking-tight text-white">Yasin<span class="gold-text">Consult</span>.com</span>
+          <div class="text-[11px] sm:text-xs text-gray-300 bn">বিজনেস অ্যালায়েন্স লিমিটেড</div>
+        </div>
       </div>
-      <div class="hidden md:flex items-center space-x-7 text-white font-medium">
-        <a href="#home" class="hover:text-[#d4af37] transition">Home</a>
-        <a href="#services" class="hover:text-[#d4af37] transition">Services</a>
-        <a href="#contract" class="hover:text-[#d4af37] transition">Contract Paper</a>
-        <a href="#global" class="hover:text-[#d4af37] transition">Offices</a>
-        <a href="#contact" class="hover:text-[#d4af37] transition">Contact</a>
-        <a href="#consultation" class="bg-[#d4af37] text-black font-bold px-5 py-2 rounded-full shadow-md hover:bg-white transition">Free Consult</a>
+      <div class="hidden md:flex items-center space-x-5 lg:space-x-7 text-white font-medium">
+        <a href="#home" class="hover:text-[#d4af37] transition text-sm lg:text-base">Home</a>
+        <a href="#services" class="hover:text-[#d4af37] transition text-sm lg:text-base">Services</a>
+        <a href="#contract" class="hover:text-[#d4af37] transition text-sm lg:text-base">Contract Paper</a>
+        <a href="#global" class="hover:text-[#d4af37] transition text-sm lg:text-base">Offices</a>
+        <a href="#contact" class="hover:text-[#d4af37] transition text-sm lg:text-base">Contact</a>
+        <a href="#consultation" class="bg-[#d4af37] text-black font-bold px-4 py-2 rounded-full shadow-md hover:bg-white transition text-sm lg:text-base">Free Consult</a>
       </div>
-      <button id="mobileBtn" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+      <button id="mobileBtn" class="md:hidden text-white text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden bg-black/80 backdrop-blur-xl px-6 pb-5 pt-3 border-t border-gold-500/30">
+    <div id="mobileMenu" class="md:hidden hidden bg-black/90 backdrop-blur-xl px-5 pb-5 pt-3 border-t border-gold-500/30">
       <div class="flex flex-col space-y-4 text-white font-semibold">
-        <a href="#home">Home</a><a href="#services">Services</a><a href="#contract">Contract Paper</a><a href="#global">Offices</a><a href="#contact">Contact</a>
-        <a href="#consultation" class="bg-[#d4af37] text-black px-4 py-2 rounded-full text-center">Free Consult</a>
+        <a href="#home" class="py-1">Home</a>
+        <a href="#services" class="py-1">Services</a>
+        <a href="#contract" class="py-1">Contract Paper</a>
+        <a href="#global" class="py-1">Offices</a>
+        <a href="#contact" class="py-1">Contact</a>
+        <a href="#consultation" class="bg-[#d4af37] text-black text-center px-4 py-2 rounded-full w-full">Free Consult</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section (buttons removed, height adjusted: shorter on mobile) -->
-    <section id="home" class="relative overflow-hidden hero-bg min-h-[60vh] md:min-h-[85vh] flex items-center">
+    <!-- Hero Section - Perfect responsive height (shorter on mobile to reveal gallery) -->
+    <section id="home" class="relative overflow-hidden hero-bg min-h-[55vh] md:min-h-[80vh] lg:min-h-[85vh] flex items-center">
       <div class="hero-overlay absolute inset-0"></div>
-      <div class="container mx-auto px-6 lg:px-12 relative z-10 text-white py-8 md:py-16">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-12 relative z-10 text-white py-8 sm:py-12 md:py-16">
         <div class="max-w-3xl reveal">
-          <div class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-1 rounded-full text-sm font-semibold mb-5 gold-text border border-gold-500/40"><i class="fas fa-user-tie"></i> Lead Consultant: MD YASIN</div>
-          <h1 class="font-extrabold text-4xl md:text-7xl leading-tight">Trusted Visa & Manpower Solutions <br>by <span class="gold-text">MD YASIN</span></h1>
-
-          <p class="text-base md:text-lg mt-4 max-w-2xl text-white/90">Government approved recruitment agency (RL-0173) serving Bangladeshi workers with Lebanon & Middle East expertise. Local support in Antelias, Lebanon.</p>
+          <div class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mb-4 md:mb-6 gold-text border border-gold-500/40">
+            <i class="fas fa-user-tie"></i> Lead Consultant: MD YASIN
+          </div>
+          <h1 class="font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">Trusted Visa & Manpower Solutions <br>by <span class="gold-text">MD YASIN</span></h1>
+          <p class="text-sm sm:text-base md:text-lg mt-3 sm:mt-4 max-w-2xl text-white/90">Government approved recruitment agency (RL-0173) serving Bangladeshi workers with Lebanon & Middle East expertise. Local support in Antelias, Lebanon.</p>
           <!-- Both buttons removed as requested -->
         </div>
       </div>
@@ -118,129 +200,193 @@
     
 
     <!-- ========== STATIC VERTICAL IMAGE GALLERY (NO SLIDER) ========== -->
-    <section class="py-12 relative-section bg-gradient-to-b from-amber-50/20 to-white/80">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="text-center max-w-3xl mx-auto mb-8 reveal">
-          <div class="inline-flex items-center gap-2 bg-amber-100/60 px-4 py-1 rounded-full gold-text text-sm font-bold mb-2"><i class="fas fa-images"></i> আমাদের কাজের ছবি</div>
-          <h2 class="font-black text-3xl md:text-5xl text-gray-800">আমাদের কাজ কি? <span class="gold-text">(Our Work)</span></h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#b68b1f] mx-auto mt-3 rounded-full"></div>
-          <p class="bn text-gray-600 mt-3">নিচের ছবিগুলোতে আমাদের ভিসা প্রক্রিয়া, চুক্তিপত্র ও সেবার বিভিন্ন দিক তুলে ধরা হয়েছে</p>
+    <section class="py-10 sm:py-14 md:py-16 relative-section bg-gradient-to-b from-amber-50/20 to-white/80">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-8 md:mb-12 reveal">
+          <div class="inline-flex items-center gap-2 bg-amber-100/60 px-4 py-1.5 rounded-full gold-text text-xs md:text-sm font-bold mb-2"><i class="fas fa-images"></i> আমাদের কাজের ছবি</div>
+          <h2 class="font-black text-2xl sm:text-4xl md:text-5xl text-gray-800">আমাদের কাজ কি? <span class="gold-text">(Our Work)</span></h2>
+          <div class="w-20 h-1 bg-gradient-to-r from-[#d4af37] to-[#b68b1f] mx-auto mt-3 rounded-full"></div>
+          <p class="bn text-gray-600 mt-3 text-sm sm:text-base">নিচের ছবিগুলোতে আমাদের ভিসা প্রক্রিয়া, চুক্তিপত্র ও সেবার বিভিন্ন দিক তুলে ধরা হয়েছে</p>
         </div>
 
         <div class="static-gallery reveal" id="imageGallery">
-          <!-- images will be injected via JS for easy editing -->
+          <!-- images will be injected via JS -->
         </div>
       </div>
     </section>
 
     <!-- Services Section - Lebanon Work Permit -->
-    <section id="services" class="py-20 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-          <span class="gold-text font-bold tracking-wider uppercase"><i class="fas fa-crown"></i> Premium Services</span>
-          <h2 class="font-extrabold text-4xl md:text-5xl text-gray-800 mt-2">Specialized Solutions <span class="gold-text">by YasinConsult</span></h2>
-          <div class="bn-subtle mt-1 text-sm">বিশেষায়িত সেবা</div>
-          <div class="w-28 h-1 bg-gradient-to-r from-[#d4af37] to-[#9a7618] mx-auto mt-4 rounded-full"></div>
+    <section id="services" class="py-12 sm:py-16 md:py-20 relative-section">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
+          <span class="gold-text font-bold tracking-wider uppercase text-xs md:text-sm"><i class="fas fa-crown"></i> Premium Services</span>
+          <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl text-gray-800 mt-2">Specialized Solutions <span class="gold-text">by YasinConsult</span></h2>
+          <div class="bn-subtle mt-1 text-xs md:text-sm">বিশেষায়িত সেবা</div>
+          <div class="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#9a7618] mx-auto mt-4 rounded-full"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          <div class="glass-card p-8 reveal border-t-4 border-t-[#d4af37]">
-            <div class="flex justify-center mb-6"><div class="lebanon-flag-badge"><img src="https://flagcdn.com/w320/lb.png" alt="Lebanon Flag" class="flag-icon-large"><div><span class="font-black text-xl gold-text block">LEBANON</span><span class="text-xs text-gray-500 bn">প্রধান ভিসা গন্তব্য</span></div></div></div>
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mb-5 shadow-md mx-auto"><i class="fas fa-passport text-3xl text-[#b68b1f]"></i></div>
-            <h3 class="font-extrabold text-2xl text-gray-800 text-center">Lebanon Work Permit Specialist</h3>
-            <div class="bn-subtle text-sm mb-3 text-center">লেবানন ওয়ার্ক পারমিট স্পেশালিস্ট</div>
-            <p class="text-gray-600 text-sm text-center">Embassy liaison, contract verification & legal attestation for Lebanon. Fast-track processing.</p>
-            <p class="bn-card-desc text-center">এম্বাসি কন্ট্রাক্ট, এটেস্টেশন ও দ্রুত ভিসা প্রক্রিয়া।</p>
-            <div class="mt-5 flex justify-center items-center gap-2 text-sm font-bold"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+          <div class="glass-card p-6 sm:p-8 reveal border-t-4 border-t-[#d4af37]">
+            <div class="flex justify-center mb-5 md:mb-6">
+              <div class="lebanon-flag-badge">
+                <img src="https://flagcdn.com/w320/lb.png" alt="Lebanon Flag" class="flag-icon-large">
+                <div>
+                  <span class="font-black text-lg md:text-xl gold-text block">LEBANON</span>
+                  <span class="text-[11px] md:text-xs text-gray-500 bn">প্রধান ভিসা গন্তব্য</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mb-5 shadow-md mx-auto">
+              <i class="fas fa-passport text-2xl md:text-3xl text-[#b68b1f]"></i>
+            </div>
+            <h3 class="font-extrabold text-xl md:text-2xl text-gray-800 text-center">Lebanon Work Permit Specialist</h3>
+            <div class="bn-subtle text-xs md:text-sm mb-3 text-center">লেবানন ওয়ার্ক পারমিট স্পেশালিস্ট</div>
+            <p class="text-gray-600 text-xs md:text-sm text-center">Embassy liaison, contract verification & legal attestation for Lebanon. Fast-track processing.</p>
+            <p class="bn-card-desc text-center text-xs md:text-sm">এম্বাসি কন্ট্রাক্ট, এটেস্টেশন ও দ্রুত ভিসা প্রক্রিয়া।</p>
+            <div class="mt-5 flex justify-center items-center gap-2 text-xs md:text-sm font-bold"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708</div>
           </div>
-          <div class="glass-card p-8 reveal">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-gray-100 flex items-center justify-center mb-5 shadow-md mx-auto"><i class="fas fa-plane-departure text-3xl text-[#b68b1f]"></i></div>
-            <h3 class="font-extrabold text-2xl text-gray-800 text-center">Manpower & Air Ticketing</h3>
-            <div class="bn-subtle text-sm mb-2 text-center">ম্যানপাওয়ার ও এয়ার টিকেটিং</div>
-            <p class="text-gray-600 text-sm text-center">Govt. clearance, manpower supply, flight bookings to Lebanon, Saudi, UAE, Malaysia.</p>
-            <p class="bn-card-desc text-center">সৌদি, দুবাই, মালয়েশিয়ায় ক্লিয়ারেন্স ও ফ্লাইট বুকিং।</p>
-            <div class="mt-5 flex flex-wrap justify-center gap-2"><span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇱🇧 লেবানন</span><span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇸🇦 সৌদি</span><span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇦🇪 দুবাই</span><span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">🇲🇾 মালয়েশিয়া</span></div>
+          <div class="glass-card p-6 sm:p-8 reveal">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-gray-100 flex items-center justify-center mb-5 shadow-md mx-auto">
+              <i class="fas fa-plane-departure text-2xl md:text-3xl text-[#b68b1f]"></i>
+            </div>
+            <h3 class="font-extrabold text-xl md:text-2xl text-gray-800 text-center">Manpower & Air Ticketing</h3>
+            <div class="bn-subtle text-xs md:text-sm mb-2 text-center">ম্যানপাওয়ার ও এয়ার টিকেটিং</div>
+            <p class="text-gray-600 text-xs md:text-sm text-center">Govt. clearance, manpower supply, flight bookings to Lebanon, Saudi, UAE, Malaysia.</p>
+            <p class="bn-card-desc text-center text-xs md:text-sm">সৌদি, দুবাই, মালয়েশিয়ায় ক্লিয়ারেন্স ও ফ্লাইট বুকিং।</p>
+            <div class="mt-5 flex flex-wrap justify-center gap-2">
+              <span class="bg-gray-100 px-2 py-1 md:px-3 rounded-full text-[11px] md:text-xs font-semibold">🇱🇧 লেবানন</span>
+              <span class="bg-gray-100 px-2 py-1 md:px-3 rounded-full text-[11px] md:text-xs font-semibold">🇸🇦 সৌদি</span>
+              <span class="bg-gray-100 px-2 py-1 md:px-3 rounded-full text-[11px] md:text-xs font-semibold">🇦🇪 দুবাই</span>
+              <span class="bg-gray-100 px-2 py-1 md:px-3 rounded-full text-[11px] md:text-xs font-semibold">🇲🇾 মালয়েশিয়া</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Embassy Contract Paper CTA -->
-    <section id="contract" class="py-16 relative-section bg-gradient-to-b from-white to-amber-50/30">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="max-w-4xl mx-auto contract-card glass-card p-8 md:p-10 reveal flex flex-col md:flex-row gap-8 items-center shadow-2xl border border-[#d4af37]/40 rounded-2xl">
-          <div class="flex-shrink-0 bg-[#d4af37]/10 rounded-full p-5"><i class="fas fa-file-signature text-5xl gold-text"></i></div>
-          <div class="flex-1 text-center md:text-left"><h3 class="font-black text-2xl md:text-3xl text-gray-800">Embassy Contract Paper <span class="gold-text">(চুক্তিপত্র)</span></h3><p class="text-gray-600 mt-2 leading-relaxed">সঠিক ও আইনি চুক্তি ছাড়া ভিসা পাওয়া কঠিন। আমরা লেবানন ও মধ্যপ্রাচ্যের জন্য <strong>এমবেসি অ্যাপ্রুভড কন্ট্রাক্ট পেপার</strong> তৈরি ও যাচাই করে দেই। সরকারি অনুমোদন ও নোটারি সাপেক্ষে দলিল প্রস্তুত করা হয়।</p><div class="flex flex-wrap gap-3 mt-5 justify-center md:justify-start"><a href="contract.html" class="btn-gold text-black font-bold px-7 py-3 rounded-full shadow-md transition flex items-center gap-2"><i class="fas fa-external-link-alt"></i> বিস্তারিত দেখুন / View Details</a><a href="#consultation" class="border border-[#d4af37] text-[#b68b1f] font-semibold px-6 py-3 rounded-full hover:bg-[#d4af37]/10 transition">ফ্রি কনসালটেশন</a></div></div>
+    <section id="contract" class="py-12 sm:py-16 relative-section bg-gradient-to-b from-white to-amber-50/30">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="max-w-4xl mx-auto contract-card glass-card p-6 sm:p-8 md:p-10 reveal flex flex-col md:flex-row gap-6 md:gap-8 items-center shadow-2xl border border-[#d4af37]/40 rounded-2xl">
+          <div class="flex-shrink-0 bg-[#d4af37]/10 rounded-full p-4 md:p-5"><i class="fas fa-file-signature text-4xl md:text-5xl gold-text"></i></div>
+          <div class="flex-1 text-center md:text-left">
+            <h3 class="font-black text-xl sm:text-2xl md:text-3xl text-gray-800">Embassy Contract Paper <span class="gold-text">(চুক্তিপত্র)</span></h3>
+            <p class="text-gray-600 mt-2 leading-relaxed text-sm sm:text-base">সঠিক ও আইনি চুক্তি ছাড়া ভিসা পাওয়া কঠিন। আমরা লেবানন ও মধ্যপ্রাচ্যের জন্য <strong>এমবেসি অ্যাপ্রুভড কন্ট্রাক্ট পেপার</strong> তৈরি ও যাচাই করে দেই। সরকারি অনুমোদন ও নোটারি সাপেক্ষে দলিল প্রস্তুত করা হয়।</p>
+            <div class="flex flex-wrap gap-3 mt-5 justify-center md:justify-start">
+              <a href="contract.html" class="btn-gold text-black font-bold px-5 py-2.5 md:px-7 md:py-3 rounded-full shadow-md transition flex items-center gap-2 text-sm md:text-base"><i class="fas fa-external-link-alt"></i> বিস্তারিত দেখুন / View Details</a>
+              <a href="#consultation" class="border border-[#d4af37] text-[#b68b1f] font-semibold px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-[#d4af37]/10 transition text-sm md:text-base">ফ্রি কনসালটেশন</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Global Presence -->
-    <section id="global" class="py-20 bg-gray-50/60 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="text-center mb-12 reveal"><h2 class="font-extrabold text-4xl text-gray-800">Global Presence</h2></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-          <div class="glass-card p-6 text-center"><i class="fas fa-map-marker-alt text-4xl gold-text mb-3"></i><h3 class="font-bold text-2xl">Bangladesh Office</h3><p class="mt-2 font-semibold">BUSINESS ALLIANCE LTD. (RL-0173)</p><p class="text-gray-600">Dhaka, Bangladesh — Head Office</p></div>
-          <div class="glass-card p-6 text-center border-2 border-[#d4af37] shadow-xl"><i class="fas fa-building text-4xl gold-text mb-3"></i><h3 class="font-bold text-2xl">Lebanon Office — Antelias</h3><p class="text-gray-600"><i class="fas fa-location-dot gold-text"></i> RABIH ELMURR, Antelias, Lebanon</p><p class="mt-2"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708  |  +961 78 797 299</p></div>
+    <section id="global" class="py-12 sm:py-16 md:py-20 bg-gray-50/60 relative-section">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="text-center mb-8 md:mb-12 reveal"><h2 class="font-extrabold text-3xl sm:text-4xl text-gray-800">Global Presence</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 reveal">
+          <div class="glass-card p-5 md:p-6 text-center">
+            <i class="fas fa-map-marker-alt text-3xl md:text-4xl gold-text mb-3"></i>
+            <h3 class="font-bold text-xl md:text-2xl">Bangladesh Office</h3>
+            <p class="mt-2 font-semibold text-sm md:text-base">BUSINESS ALLIANCE LTD. (RL-0173)</p>
+            <p class="text-gray-600 text-sm">Dhaka, Bangladesh — Head Office</p>
+          </div>
+          <div class="glass-card p-5 md:p-6 text-center border-2 border-[#d4af37] shadow-xl">
+            <i class="fas fa-building text-3xl md:text-4xl gold-text mb-3"></i>
+            <h3 class="font-bold text-xl md:text-2xl">Lebanon Office — Antelias</h3>
+            <p class="text-gray-600 text-sm"><i class="fas fa-location-dot gold-text"></i> RABIH ELMURR, Antelias, Lebanon</p>
+            <p class="mt-2 text-sm"><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708  |  +961 78 797 299</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Why YasinConsult -->
-    <section class="py-16 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="grid md:grid-cols-3 gap-7 max-w-5xl mx-auto">
-          <div class="glass-card p-6 text-center reveal"><div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-file-contract text-white text-2xl"></i></div><h3 class="font-black text-xl mt-4">Govt. Approved License</h3><div class="bn-small">আরএল-০১৭৩</div></div>
-          <div class="glass-card p-6 text-center reveal"><div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-user-check text-white text-2xl"></i></div><h3 class="font-black text-xl mt-4">MD YASIN's Expertise</h3><div class="bn-small">১৫+ বছর অভিজ্ঞতা</div></div>
-          <div class="glass-card p-6 text-center reveal"><div class="w-16 h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-globe text-white text-2xl"></i></div><h3 class="font-black text-xl mt-4">Dual Office Support</h3><div class="bn-small">বাংলাদেশ + লেবানন</div></div>
+    <section class="py-12 sm:py-16 relative-section">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <div class="glass-card p-5 md:p-6 text-center reveal">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-file-contract text-white text-xl md:text-2xl"></i></div>
+            <h3 class="font-black text-lg md:text-xl mt-4">Govt. Approved License</h3>
+            <div class="bn-small text-sm">আরএল-০১৭৩</div>
+          </div>
+          <div class="glass-card p-5 md:p-6 text-center reveal">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-user-check text-white text-xl md:text-2xl"></i></div>
+            <h3 class="font-black text-lg md:text-xl mt-4">MD YASIN's Expertise</h3>
+            <div class="bn-small text-sm">১৫+ বছর অভিজ্ঞতা</div>
+          </div>
+          <div class="glass-card p-5 md:p-6 text-center reveal">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full gold-gradient mx-auto flex items-center justify-center"><i class="fas fa-globe text-white text-xl md:text-2xl"></i></div>
+            <h3 class="font-black text-lg md:text-xl mt-4">Dual Office Support</h3>
+            <div class="bn-small text-sm">বাংলাদেশ + লেবানন</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonial -->
-    <section class="py-12 relative-section">
-      <div class="container mx-auto px-6 text-center reveal"><i class="fas fa-quote-left text-5xl gold-text opacity-50"></i><p class="max-w-3xl mx-auto text-gray-700 italic text-lg mt-4 testimonial-bn">“বাংলাদেশি কর্মীদের জন্য লেবানন ও মধ্যপ্রাচ্যে কাজের ভিসা প্রক্রিয়ায় ব্যবসা অ্যালায়েন্স লিমিটেড ও ইয়াসিন স্যার অত্যন্ত পেশাদার।”</p><p class="font-bold mt-4">— Rashedul Islam, Manpower Coordinator, Lebanon</p></div>
+    <section class="py-10 md:py-12 relative-section">
+      <div class="container mx-auto px-5 text-center reveal">
+        <i class="fas fa-quote-left text-4xl md:text-5xl gold-text opacity-50"></i>
+        <p class="max-w-3xl mx-auto text-gray-700 italic text-base md:text-lg mt-4 testimonial-bn">“বাংলাদেশি কর্মীদের জন্য লেবানন ও মধ্যপ্রাচ্যে কাজের ভিসা প্রক্রিয়ায় ব্যবসা অ্যালায়েন্স লিমিটেড ও ইয়াসিন স্যার অত্যন্ত পেশাদার।”</p>
+        <p class="font-bold mt-4 text-sm md:text-base">— Rashedul Islam, Manpower Coordinator, Lebanon</p>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 relative-section">
-      <div class="container mx-auto px-6 lg:px-10">
-        <div class="glass-card p-8 md:p-12 max-w-5xl mx-auto reveal">
-          <h2 class="font-extrabold text-4xl text-center text-gray-800">Contact <span class="gold-text">YasinConsult</span></h2>
-          <div class="grid md:grid-cols-2 gap-8 mt-10">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 relative-section">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="glass-card p-6 sm:p-8 md:p-12 max-w-5xl mx-auto reveal">
+          <h2 class="font-extrabold text-3xl sm:text-4xl text-center text-gray-800">Contact <span class="gold-text">YasinConsult</span></h2>
+          <div class="grid md:grid-cols-2 gap-8 mt-8 md:mt-10">
             <div class="space-y-5">
-              <div class="flex items-center gap-3 flex-wrap"><i class="fab fa-whatsapp text-green-600 text-2xl"></i><span class="font-bold">WhatsApp :</span><div class="flex flex-wrap gap-2"><a href="https://wa.me/96176074708" class="hover:underline gold-text font-medium">+961 76 074 708</a><span>/</span><a href="https://wa.me/96178797299" class="hover:underline gold-text font-medium">+961 78 797 299</a></div></div>
-              <div class="flex items-center gap-3 flex-wrap"><i class="fas fa-phone-alt gold-text text-lg"></i><div class="flex flex-wrap gap-2"><span class="font-medium">Lebanon:</span><span>+961 76 074 708, +961 78 797 299</span></div></div>
-              <div class="flex items-center gap-3 flex-wrap"><i class="fas fa-envelope gold-text text-lg"></i><a href="mailto:mohmd.90yasin@gmail.com" class="hover:underline break-all">mohmd.90yasin@gmail.com</a></div>
-              <div class="flex items-start gap-3"><i class="fas fa-map-pin gold-text text-lg mt-1"></i><div class="space-y-2"><p><strong class="gold-text">Lebanon Office:</strong><br> RABIH ELMURR, Antelias, Lebanon.</p><p><strong class="gold-text">Bangladesh Office:</strong><br> Business Alliance Ltd, Dhaka (RL-0173)</p></div></div>
+              <div class="flex items-center gap-3 flex-wrap"><i class="fab fa-whatsapp text-green-600 text-xl md:text-2xl"></i><span class="font-bold text-sm md:text-base">WhatsApp :</span><div class="flex flex-wrap gap-2"><a href="https://wa.me/96176074708" class="hover:underline gold-text font-medium text-sm">+961 76 074 708</a><span>/</span><a href="https://wa.me/96178797299" class="hover:underline gold-text font-medium text-sm">+961 78 797 299</a></div></div>
+              <div class="flex items-center gap-3 flex-wrap"><i class="fas fa-phone-alt gold-text text-base md:text-lg"></i><div class="flex flex-wrap gap-2 text-sm"><span class="font-medium">Lebanon:</span><span>+961 76 074 708, +961 78 797 299</span></div></div>
+              <div class="flex items-center gap-3 flex-wrap"><i class="fas fa-envelope gold-text text-base md:text-lg"></i><a href="mailto:mohmd.90yasin@gmail.com" class="hover:underline break-all text-sm">mohmd.90yasin@gmail.com</a></div>
+              <div class="flex items-start gap-3"><i class="fas fa-map-pin gold-text text-base md:text-lg mt-1"></i><div class="space-y-2 text-sm"><p><strong class="gold-text">Lebanon Office:</strong><br> RABIH ELMURR, Antelias, Lebanon.</p><p><strong class="gold-text">Bangladesh Office:</strong><br> Business Alliance Ltd, Dhaka (RL-0173)</p></div></div>
             </div>
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100"><p class="font-bold gold-text text-lg">Direct Contact</p><p class="mt-3 text-gray-700 leading-relaxed">Call or WhatsApp for any visa or manpower related inquiries. Our expert team will guide you.</p><div class="mt-6 flex flex-wrap gap-3"><a href="tel:+96176074708" class="bg-[#004D40] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#0a5c50] transition flex items-center gap-2"><i class="fas fa-phone"></i> Call (Lebanon)</a><a href="https://wa.me/96176074708" target="_blank" class="bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-green-700 transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Now</a></div></div>
+            <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-100">
+              <p class="font-bold gold-text text-base md:text-lg">Direct Contact</p>
+              <p class="mt-2 text-gray-700 leading-relaxed text-sm">Call or WhatsApp for any visa or manpower related inquiries. Our expert team will guide you.</p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="tel:+96176074708" class="bg-[#004D40] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold hover:bg-[#0a5c50] transition flex items-center gap-2"><i class="fas fa-phone"></i> Call (Lebanon)</a>
+                <a href="https://wa.me/96176074708" target="_blank" class="bg-green-600 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold hover:bg-green-700 transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Consultation CTA -->
-    <section id="consultation" class="pb-20">
-      <div class="container mx-auto px-6 text-center reveal">
-        <div class="bg-black/5 backdrop-blur-sm rounded-3xl p-8 max-w-3xl mx-auto border border-[#d4af37]/40"><h3 class="font-extrabold text-3xl gold-text">Free Consultation</h3><p class="text-gray-600 mt-2">Get expert guidance for your desired work visa. Contact us today.</p><a href="https://wa.me/96176074708?text=Hello%20MD%20YASIN%2C%20I%20need%20a%20free%20consultation%20for%20work%20permit." class="inline-block mt-6 btn-gold text-black font-bold px-8 py-3 rounded-full shadow-lg"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a></div>
+    <section id="consultation" class="pb-16 md:pb-20">
+      <div class="container mx-auto px-5 text-center reveal">
+        <div class="bg-black/5 backdrop-blur-sm rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto border border-[#d4af37]/40">
+          <h3 class="font-extrabold text-2xl sm:text-3xl gold-text">Free Consultation</h3>
+          <p class="text-gray-600 mt-2 text-sm sm:text-base">Get expert guidance for your desired work visa. Contact us today.</p>
+          <a href="https://wa.me/96176074708?text=Hello%20MD%20YASIN%2C%20I%20need%20a%20free%20consultation%20for%20work%20permit." class="inline-block mt-5 md:mt-6 btn-gold text-black font-bold px-6 py-2.5 md:px-8 md:py-3 rounded-full shadow-lg text-sm md:text-base"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
+        </div>
       </div>
     </section>
 
-    <footer class="bg-[#0a1917] text-gray-300 pt-12 pb-6 border-t-4 border-t-[#d4af37]">
-      <div class="container mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div><i class="fas fa-globe-asia text-3xl gold-text"></i><div class="font-black text-xl text-white mt-2">YasinConsult.com</div><p class="text-xs">Govt. License RL-0173 | Business Alliance Ltd.</p></div>
-        <div><h4 class="font-bold text-white text-lg">Contact</h4><ul class="mt-3 space-y-2 text-sm"><li><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708</li><li><i class="fas fa-phone-alt gold-text"></i> +961 78 797 299</li><li><i class="fas fa-envelope gold-text"></i> mohmd.90yasin@gmail.com</li></ul></div>
-        <div><h4 class="font-bold text-white text-lg">Office</h4><p class="text-sm mt-3"><i class="fas fa-map-marker-alt gold-text"></i> Lebanon: Antelias</p><p class="text-sm mt-2"><i class="fas fa-map-marker-alt gold-text"></i> Bangladesh: Dhaka (RL-0173)</p></div>
-        <div><h4 class="font-bold text-white text-lg">Services</h4><p class="text-sm mt-2">Lebanon Work Permit | Manpower Clearance | Air Ticketing | Contract Papers</p><div class="mt-4 text-xs">© 2025 YasinConsult</div></div>
+    <footer class="bg-[#0a1917] text-gray-300 pt-10 pb-6 border-t-4 border-t-[#d4af37]">
+      <div class="container mx-auto px-5 sm:px-8 lg:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div>
+          <i class="fas fa-globe-asia text-2xl md:text-3xl gold-text"></i>
+          <div class="font-black text-lg md:text-xl text-white mt-2">YasinConsult.com</div>
+          <p class="text-xs mt-1">Govt. License RL-0173 | Business Alliance Ltd.</p>
+        </div>
+        <div><h4 class="font-bold text-white text-base md:text-lg">Contact</h4><ul class="mt-3 space-y-2 text-xs md:text-sm"><li><i class="fas fa-phone-alt gold-text"></i> +961 76 074 708</li><li><i class="fas fa-phone-alt gold-text"></i> +961 78 797 299</li><li><i class="fas fa-envelope gold-text"></i> mohmd.90yasin@gmail.com</li></ul></div>
+        <div><h4 class="font-bold text-white text-base md:text-lg">Office</h4><p class="text-xs md:text-sm mt-3"><i class="fas fa-map-marker-alt gold-text"></i> Lebanon: Antelias</p><p class="text-xs md:text-sm mt-2"><i class="fas fa-map-marker-alt gold-text"></i> Bangladesh: Dhaka (RL-0173)</p></div>
+        <div><h4 class="font-bold text-white text-base md:text-lg">Services</h4><p class="text-xs md:text-sm mt-2">Lebanon Work Permit | Manpower Clearance | Air Ticketing | Contract Papers</p><div class="mt-4 text-[10px] md:text-xs">© 2025 YasinConsult</div></div>
       </div>
     </footer>
   </main>
 
-  <a href="https://wa.me/96176074708?text=Assalamualaikum%20MD%20Yasin,%20I%20need%20visa%20consultation" target="_blank" class="whatsapp-float flex items-center gap-2 text-white font-bold shadow-2xl"><i class="fab fa-whatsapp text-xl"></i> <span class="hidden sm:inline">Consult MD YASIN</span></a>
+  <a href="https://wa.me/96176074708?text=Assalamualaikum%20MD%20Yasin,%20I%20need%20visa%20consultation" target="_blank" class="whatsapp-float flex items-center gap-2 text-white font-bold shadow-2xl"><i class="fab fa-whatsapp text-lg sm:text-xl"></i> <span class="hidden sm:inline text-sm">Consult MD YASIN</span></a>
 
   <script>
-    // ========== STATIC IMAGE LIST (6 images, vertical order) ==========
-    // আপনি এখানে আপনার ছবির নাম বসান। বর্তমানে প্লেসহোল্ডার ইমেজ ব্যবহার করা হয়েছে।
+    // Static image list - exact same as original
     const imgWorkList = [
       "1 amra ki kori.jpg",
       "2 kon kon seba paben.jpg",
@@ -249,7 +395,6 @@
       "5 important.jpg",
       "6 amra aci apnr pase.jpg"
     ];
-    // উদাহরণ: [ "1.png", "2.png", "3.png", "4.png", "5.png", "6.png" ]
 
     const galleryContainer = document.getElementById('imageGallery');
     if (galleryContainer) {
@@ -271,7 +416,7 @@
       });
     }
 
-    // Scroll reveal observer (unchanged)
+    // Scroll reveal observer
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -285,7 +430,15 @@
       mobileBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         const icon = mobileBtn.querySelector('i');
-        if (icon) icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times');
+        if (icon) {
+          if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
       });
       document.querySelectorAll('#mobileMenu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
     }
